@@ -1,8 +1,10 @@
 import React from "react";
+import { Route, createBrowserRouter, creteRoutesFromElements, RouterProvider } from react-router-dom;
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import HomeCards from "./components/HomeCards";
-import ProjectListings from "./components/ProjectListings";
+import ProjectListing from "./components/ProjectListing";
+import ViewAll from "./components/ViewAll";
 
 const App = () => {
   return (
@@ -13,16 +15,10 @@ const App = () => {
         subtitle="The ultimate destination for every wedding need..."
       />
       <HomeCards />
-      <ProjectListings title="Wedding Projects"/>
+      <ProjectListing title="Wedding Projects"/>
+      <ViewAll />
 
-      <section className="m-auto max-w-lg my-10 px-6">
-        <a
-          href="jobs.html"
-          className="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
-        >
-          View All Jobs
-        </a>
-      </section>
+
     </>
   );
 };
