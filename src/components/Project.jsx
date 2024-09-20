@@ -1,4 +1,5 @@
 import React from "react";
+import { FaMapMarker }  from 'react-icons/fa';
 import { useState } from "react";
 
 const Project = ({ project }) => {
@@ -16,9 +17,9 @@ const Project = ({ project }) => {
           {showFullDescription
             ? project.description
             : project.description.substring(0, 100) + " ..."}
-          
+
           <button
-            onClick={() => setShowFullDescription((preState) => !preState) }
+            onClick={() => setShowFullDescription((preState) => !preState)}
             className="text-indigo-500 mb-5 hover:text-indigo-600"
           >
             {showFullDescription ? "less" : "more"}
@@ -31,7 +32,7 @@ const Project = ({ project }) => {
 
         <div className="flex flex-col lg:flex-row justify-between mb-4">
           <div className="text-orange-700 mb-3">
-            <i className="fa-solid fa-location-dot text-lg"></i>
+            <FaMapMarker className="inline mb-1 mr-1 text-lg"></FaMapMarker>
             {project.location}
           </div>
           <a
