@@ -9,11 +9,13 @@ const ProjectListing = ({ title, isHome = false }) => {
 
   useEffect(() => {
     const fetchProjects = async () => {
+
+      const apiUrl = isHome?'/api/projects?_limit=3':'/api/projects';
       try {
-        const resp = await fetch("http://localhost:8000/projects");
+        const resp = await fetch(apiUrl);
         const data = await resp.json();
         console.log (data)
-        setProjects(isHome?data.slice(0,3):data);
+        setProjects(data);
 
       } catch (error) {
         console.log("Error fetching data", error);

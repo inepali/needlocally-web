@@ -1,11 +1,9 @@
 import React from "react";
 import { FaMapMarker }  from 'react-icons/fa';
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Project = ({ project }) => {
-  const [showFullDescription, setShowFullDescription] = useState(false);
-
+const ProjectDetails = ({ project }) => {
+  
   return (
     <div className="bg-white rounded-xl shadow-md relative">
       <div className="p-4">
@@ -15,16 +13,7 @@ const Project = ({ project }) => {
         </div>
 
         <div className="mb-5">
-          {showFullDescription
-            ? project.description
-            : project.description.substring(0, 100) + " ..."}
-
-          <button
-            onClick={() => setShowFullDescription((preState) => !preState)}
-            className="text-indigo-500 mb-5 hover:text-indigo-600"
-          >
-            {showFullDescription ? "less" : "more"}
-          </button>
+          {project.description}
         </div>
 
         <h3 className="text-indigo-500 mb-2">Budge: {project.budget}</h3>
@@ -36,16 +25,10 @@ const Project = ({ project }) => {
             <FaMapMarker className="inline mb-1 mr-1 text-lg"></FaMapMarker>
             {project.location}
           </div>
-          <Link
-            to={`/projects/${project.id}`}
-            className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
-          >
-            More
-          </Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default Project;
+export default ProjectDetails;
