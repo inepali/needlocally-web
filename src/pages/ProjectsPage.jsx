@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectListing from "../components/ProjectListing";
 
-const ProjetsPage = () => {
+const ProjectsPage = () => {
   return (
     <section className="bg-blue-50 px-4 py-6">
       <ProjectListing title="All Wedding Projects" />
@@ -9,4 +9,4 @@ const ProjetsPage = () => {
   );
 };
 
-export default ProjetsPage;
+export default ProjectsPage;
