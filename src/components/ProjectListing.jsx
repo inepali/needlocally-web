@@ -1,7 +1,5 @@
 import React from "react";
 import Project from "./Project";
-import { useState, useEffect } from "react";
-import Spiner from "./Spiner";
 import { useLoaderData } from "react-router-dom";
 
 const ProjectListing = ({ title, isHome = false }) => {
